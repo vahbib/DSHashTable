@@ -1,6 +1,6 @@
 package com.day17;
 
-public class HashMap {
+public class HashMap<K,V> {
     LinkedList<K,V> list;
 
     public HashMap(){
@@ -8,12 +8,12 @@ public class HashMap {
     }
 
     public V get(K key) {
-        nodeMap<K,V> mapNode = (nodeMap<K, V>) list.search(key);
+        NodeMap<K,V> mapNode = (NodeMap<K, V>) list.search(key);
         return (mapNode == null) ? null : mapNode.getValue();
     }
 
     public void add(K key, V value) {
-        nodeMap<K,V> mapNode = (nodeMap<K, V>) list.search(key);
+        NodeMap<K,V> mapNode = (NodeMap<K, V>) list.search(key);
         if(mapNode==null){
             mapNode = new NodeMap<>(key,value);
             list.append(mapNode);
